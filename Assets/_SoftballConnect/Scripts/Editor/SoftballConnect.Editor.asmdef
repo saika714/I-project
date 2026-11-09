@@ -1,0 +1,14 @@
+{
+  "name": "SoftballConnect.Editor",
+  "rootNamespace": "SoftballConnect",
+  "references": [
+    "SoftballConnect.Domain",
+    "SoftballConnect.Application",
+    "SoftballConnect.Runtime",
+    "Unity.InputSystem"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "noEngineReferences": false
+}

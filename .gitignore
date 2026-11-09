@@ -1,16 +1,37 @@
-[Ll]ibrary/
-[Tt]emp/
-[Oo]bj/
-[Bb]uild/
-[Bb]uilds/
-[Ll]ogs/
-[Uu]ser[Ss]ettings/
+# Unity generated files (project root)
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+/[Mm]emoryCaptures/
+/[Rr]ecordings/
 
-.vs/
-.vscode/
-
+# IDE caches and Unity-generated project files
+/.vs/
+/.vscode/
+/.idea/
 *.csproj
 *.sln
 *.slnx
 *.user
+*.userprefs
+*.pidb
+*.booproj
+
+# Temporary and OS files
 *.tmp
+.DS_Store
+._*
+Thumbs.db
+Desktop.ini
+
+# Local test logs (keep result XML and preview PNG as evidence)
+/TestResults/*.log
+
+# Local download bundle; the four original report PNGs remain tracked.
+/Reports/*.zip
+
+# Keep Assets/**/*.meta, Packages/packages-lock.json, ProjectSettings and Docs tracked.

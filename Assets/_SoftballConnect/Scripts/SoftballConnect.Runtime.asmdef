@@ -1,0 +1,12 @@
+{
+  "name": "SoftballConnect.Runtime",
+  "rootNamespace": "SoftballConnect",
+  "references": [
+    "SoftballConnect.Domain",
+    "SoftballConnect.Application",
+    "Unity.InputSystem",
+    "Unity.ugui"
+  ],
+  "includePlatforms": [],
+  "noEngineReferences": false
+}

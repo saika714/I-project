@@ -1,0 +1,15 @@
+{
+  "name": "SoftballConnect.EditModeTests",
+  "rootNamespace": "SoftballConnect",
+  "references": [
+    "SoftballConnect.Domain",
+    "SoftballConnect.Application"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "noEngineReferences": true,
+  "optionalUnityReferences": [
+    "TestAssemblies"
+  ]
+}

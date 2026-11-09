@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="2" result="Passed" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-11-09 09:35:24Z" end-time="2026-11-09 09:35:24Z" duration="0.4870772">
+  <test-suite type="TestSuite" id="1010" name="I project" fullname="I project" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-11-09 09:35:24Z" end-time="2026-11-09 09:35:24Z" duration="0.487077" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="PlayMode" />
+    </properties>
+    <test-suite type="Assembly" id="1004" name="SoftballConnect.PlayModeTests.dll" fullname="/private/tmp/softball-error-check.LN4fhz/Library/ScriptAssemblies/SoftballConnect.PlayModeTests.dll" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-11-09 09:35:24Z" end-time="2026-11-09 09:35:24Z" duration="0.480623" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="16133" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="PlayMode" />
+        <property name="EditorOnly" value="False" />
+      </properties>
+      <test-suite type="TestSuite" id="1005" name="SoftballConnect" fullname="SoftballConnect" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-11-09 09:35:24Z" end-time="2026-11-09 09:35:24Z" duration="0.480206" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-suite type="TestSuite" id="1006" name="Tests" fullname="SoftballConnect.Tests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-11-09 09:35:24Z" end-time="2026-11-09 09:35:24Z" duration="0.480010" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-suite type="TestFixture" id="1001" name="MvpFlowTests" fullname="SoftballConnect.Tests.MvpFlowTests" classname="SoftballConnect.Tests.MvpFlowTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-11-09 09:35:24Z" end-time="2026-11-09 09:35:24Z" duration="0.479250" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1003" name="MenuFiveBallsResultRetryAndMenu" fullname="SoftballConnect.Tests.MvpFlowTests.MenuFiveBallsResultRetryAndMenu" methodname="MenuFiveBallsResultRetryAndMenu" classname="SoftballConnect.Tests.MvpFlowTests" runstate="Runnable" seed="786246475" result="Passed" start-time="2026-11-09 09:35:24Z" end-time="2026-11-09 09:35:24Z" duration="0.362966" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1002" name="SpaceInputReachesSimulationAndPauseFreezesDriver" fullname="SoftballConnect.Tests.MvpFlowTests.SpaceInputReachesSimulationAndPauseFreezesDriver" methodname="SpaceInputReachesSimulationAndPauseFreezesDriver" classname="SoftballConnect.Tests.MvpFlowTests" runstate="Runnable" seed="715990613" result="Passed" start-time="2026-11-09 09:35:24Z" end-time="2026-11-09 09:35:24Z" duration="0.106031" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <output><![CDATA[Saving results to: /Users/s.takamiya/Library/Application Support/DefaultCompany/I project/TestResults.xml
+]]></output>
+            </test-case>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

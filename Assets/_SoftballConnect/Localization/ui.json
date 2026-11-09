@@ -1,0 +1,284 @@
+{
+  "entries": [
+    {
+      "key": "title",
+      "en": "SOFTBALL CONNECT",
+      "ja": "SOFTBALL CONNECT"
+    },
+    {
+      "key": "phase",
+      "en": "FIRST-PERSON SOFTBALL",
+      "ja": "打者視点のソフトボール"
+    },
+    {
+      "key": "language",
+      "en": "日本語  L",
+      "ja": "English  L"
+    },
+    {
+      "key": "welcome",
+      "en": "Make every swing a good one.",
+      "ja": "その一振りを、最高の一球に。"
+    },
+    {
+      "key": "tutorial",
+      "en": "01  Watch the underhand pitch\n02  Swing with Space or click\n03  Right-drag to look. Enter for the next pitch.",
+      "ja": "01  下手投げの球を見よう\n02  Space かクリックでスイング\n03  右ドラッグで見回す。Enterで次の球へ。"
+    },
+    {
+      "key": "menuHint",
+      "en": "One swing at a time. Press Enter to play.",
+      "ja": "自分のタイミングで。Enter でプレイボール！"
+    },
+    {
+      "key": "start",
+      "en": "PLAY BALL!   Enter",
+      "ja": "プレイボール！  Enter"
+    },
+    {
+      "key": "restart",
+      "en": "RETRY  R",
+      "ja": "もう一度  R"
+    },
+    {
+      "key": "menu",
+      "en": "MENU  M",
+      "ja": "メニュー  M"
+    },
+    {
+      "key": "pause",
+      "en": "PAUSE  Esc",
+      "ja": "ひと休み  Esc"
+    },
+    {
+      "key": "resume",
+      "en": "RESUME  Esc",
+      "ja": "つづける  Esc"
+    },
+    {
+      "key": "paused",
+      "en": "TIME OUT",
+      "ja": "ちょっとひと休み"
+    },
+    {
+      "key": "pauseHint",
+      "en": "Ready when you are.\nPress Esc to return to the field.",
+      "ja": "準備ができたら、またグラウンドへ。\nEsc で再開できます。"
+    },
+    {
+      "key": "assistOn",
+      "en": "ASSIST ON  A",
+      "ja": "アシスト ON  A"
+    },
+    {
+      "key": "assistOff",
+      "en": "ASSIST OFF  A",
+      "ja": "アシスト OFF  A"
+    },
+    {
+      "key": "debugOn",
+      "en": "DEBUG ON / F3",
+      "ja": "デバッグ ON / F3"
+    },
+    {
+      "key": "debugOff",
+      "en": "DEBUG OFF / F3",
+      "ja": "デバッグ OFF / F3"
+    },
+    {
+      "key": "status",
+      "en": "BALL {0} / {1}    CONTACT {2}",
+      "ja": "投球 {0} / {1}    ミート {2}"
+    },
+    {
+      "key": "controls",
+      "en": "Space / click: SWING   Enter: NEXT   Right-drag: LOOK",
+      "ja": "Space / クリック: スイング   Enter: 次へ   右ドラッグ: 見回す"
+    },
+    {
+      "key": "debugHint",
+      "en": "F3: path + bat sweep; Scene Gizmos: contact / radius",
+      "ja": "F3: 球軌道・バット掃引 / Scene Gizmos: 接触位置・半径"
+    },
+    {
+      "key": "roundComplete",
+      "en": "NICE BATTING!",
+      "ja": "ナイスバッティング！"
+    },
+    {
+      "key": "roundResult",
+      "en": "Contacts: {0} / {1}\nTry again and find your timing.",
+      "ja": "ミート: {0} / {1}\nもう一度、自分のタイミングで。"
+    },
+    {
+      "key": "retry",
+      "en": "PLAY AGAIN   Enter",
+      "ja": "もう一度あそぶ  Enter"
+    },
+    {
+      "key": "ballResult",
+      "en": "Estimated distance: {0:0.0} m\nTiming: {1}",
+      "ja": "飛距離の目安: {0:0.0} m\nタイミング: {1}"
+    },
+    {
+      "key": "Miss",
+      "en": "SWING & A MISS",
+      "ja": "空振り・見送り"
+    },
+    {
+      "key": "FairGrounder",
+      "en": "FAIR!  GROUNDER",
+      "ja": "フェア！ ゴロ"
+    },
+    {
+      "key": "FairFly",
+      "en": "NICE FLY BALL!",
+      "ja": "ナイスフライ！"
+    },
+    {
+      "key": "Foul",
+      "en": "FOUL BALL",
+      "ja": "ファウル！"
+    },
+    {
+      "key": "HomeRun",
+      "en": "HOME RUN!",
+      "ja": "ホームラン！"
+    },
+    {
+      "key": "noSwing",
+      "en": "Watch the ball, then give it a swing.",
+      "ja": "次はボールを見て振ってみよう。"
+    },
+    {
+      "key": "early",
+      "en": "A little early. Wait for it!",
+      "ja": "少し早め。もうひと呼吸待とう。"
+    },
+    {
+      "key": "late",
+      "en": "A little late. Swing sooner!",
+      "ja": "少し遅め。次は気持ち早く！"
+    },
+    {
+      "key": "onTime",
+      "en": "Great timing. Keep it up!",
+      "ja": "いいタイミング！ その調子！"
+    },
+    {
+      "key": "showRound",
+      "en": "SEE RESULTS   Enter",
+      "ja": "チャレンジ結果へ  Enter"
+    },
+    {
+      "key": "next",
+      "en": "NEXT PITCH   Enter",
+      "ja": "次の一球へ  Enter"
+    },
+    {
+      "key": "prepare",
+      "en": "GET READY!",
+      "ja": "さあ、いこう！"
+    },
+    {
+      "key": "windup",
+      "en": "HERE COMES THE PITCH",
+      "ja": "ピッチャー、投げます！"
+    },
+    {
+      "key": "watchBall",
+      "en": "WATCH THE BALL",
+      "ja": "ボールをよく見て"
+    },
+    {
+      "key": "swingNow",
+      "en": "SWING!  Space / click",
+      "ja": "いま！ スイング！"
+    },
+    {
+      "key": "followBall",
+      "en": "FOLLOW THE BALL WITH YOUR EYES",
+      "ja": "視線で打球を追おう"
+    },
+    {
+      "key": "menuTitle",
+      "en": "SOFTBALL\nCONNECT",
+      "ja": "ソフトボール\nコネクト"
+    },
+    {
+      "key": "clubTag",
+      "en": "STEP INTO THE BATTER'S BOX",
+      "ja": "打席に立って、交流しよう。"
+    },
+    {
+      "key": "challenge",
+      "en": "BATTING CHALLENGE",
+      "ja": "バッティング チャレンジ"
+    },
+    {
+      "key": "niceContact",
+      "en": "NICE CONTACT!",
+      "ja": "ナイスミート！"
+    },
+    {
+      "key": "sessionTag",
+      "en": "CHALLENGE COMPLETE",
+      "ja": "チャレンジ、おつかれさま！"
+    },
+    {
+      "key": "resultTag",
+      "en": "YOUR LAST SWING",
+      "ja": "いまの一球"
+    },
+    {
+      "key": "contactScore",
+      "en": "{0} / {1} CONTACTS",
+      "ja": "{0} / {1} ミート"
+    },
+    {
+      "key": "roundEncouragement",
+      "en": "One more round? Your next great swing is waiting.",
+      "ja": "もう一回？ 次のナイスミートを狙おう。"
+    },
+    {
+      "key": "distanceValue",
+      "en": "{0:0.0} m",
+      "ja": "{0:0.0} m"
+    },
+    {
+      "key": "nextChance",
+      "en": "NEXT CHANCE!",
+      "ja": "次、いこう！"
+    },
+    {
+      "key": "timingGuide",
+      "en": "WATCH THE BALL       SWING IN THE GOLD ZONE",
+      "ja": "ボールを見て                 黄色のゾーンでスイング"
+    },
+    {
+      "key": "ballTracked",
+      "en": "BALL · {0:0} m",
+      "ja": "打球 · {0:0} m"
+    },
+    {
+      "key": "ballRight",
+      "en": "LOOK RIGHT → {0:0} m",
+      "ja": "右を見る → {0:0} m"
+    },
+    {
+      "key": "ballLeft",
+      "en": "← LOOK LEFT · {0:0} m",
+      "ja": "← 左を見る · {0:0} m"
+    },
+    {
+      "key": "ballAbove",
+      "en": "LOOK UP ↑ {0:0} m",
+      "ja": "上を見る ↑ {0:0} m"
+    },
+    {
+      "key": "ballBelow",
+      "en": "LOOK DOWN ↓ {0:0} m",
+      "ja": "下を見る ↓ {0:0} m"
+    }
+  ]
+}

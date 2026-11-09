@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43075fd53298740a4b59175bc1321c91, type: 3}
+  m_Name: DefaultGameConfig
+  m_EditorClassIdentifier: SoftballConnect.Runtime::SoftballConnect.Content.GameConfig
+  Simulation:
+    PitchDistance: 13.11
+    BaseDistance: 18.29
+    FenceDistance: 50
+    FenceHeight: 2.4
+    PitchDuration: 1.5
+    WindupDuration: 1.2
+    PitchGravity: 3
+    BallRadius: 0.06
+    BatLength: 1.05
+    BatRadius: 0.045
+    SweetSpot: 0.78
+    SwingDuration: 0.3
+    AssistRadius: 0.1
+    Gravity: 9.81
+    Drag: 0.035
+    MaxFlightDuration: 12
+    BallsPerRound: 5
+  PlayerView:
+    EyePosition: {x: -0.72, y: 1.65, z: -0.8}
+    DesktopFieldOfView: 82
+    MouseSensitivity: 0.1
+  DesktopActions: {fileID: -944628639613478452, guid: 47c4f6d818a8348b7843431585c16317, type: 3}
+  Localization: {fileID: 4900000, guid: 7ed60b1de39e2452689bca7a213b7e46, type: 3}
+  Visuals: {fileID: 11400000, guid: e40a5987e97c94176ae5fe004a7f4418, type: 2}

@@ -1,0 +1,211 @@
+{
+  "name": "SoftballDesktop",
+  "maps": [
+    {
+      "name": "Batting",
+      "id": "8b298541c17d404795ce5ce88d959f54",
+      "actions": [
+        {
+          "name": "Swing",
+          "type": "Button",
+          "id": "44ed0b3fc9bf48758dfdf927e0ccbda8",
+          "expectedControlType": "Button",
+          "processors": "",
+          "interactions": "",
+          "initialStateCheck": false
+        },
+        {
+          "name": "PointerSwing",
+          "type": "Button",
+          "id": "ef2c29c19da34592a34de22585b1caae",
+          "expectedControlType": "Button",
+          "processors": "",
+          "interactions": "",
+          "initialStateCheck": false
+        },
+        {
+          "name": "Continue",
+          "type": "Button",
+          "id": "b249e8cd72e04d50b5f100f69189752d",
+          "expectedControlType": "Button",
+          "processors": "",
+          "interactions": "",
+          "initialStateCheck": false
+        },
+        {
+          "name": "Restart",
+          "type": "Button",
+          "id": "2716aec01805473290d5bfbf0ad32e21",
+          "expectedControlType": "Button",
+          "processors": "",
+          "interactions": "",
+          "initialStateCheck": false
+        },
+        {
+          "name": "Pause",
+          "type": "Button",
+          "id": "dd46b76e795e40c0ab44e48fdfd0af86",
+          "expectedControlType": "Button",
+          "processors": "",
+          "interactions": "",
+          "initialStateCheck": false
+        },
+        {
+          "name": "Menu",
+          "type": "Button",
+          "id": "427bd0fe4870473d87adfcd81def9ec2",
+          "expectedControlType": "Button",
+          "processors": "",
+          "interactions": "",
+          "initialStateCheck": false
+        },
+        {
+          "name": "Language",
+          "type": "Button",
+          "id": "d80834b958d847b38c5de71d5436b807",
+          "expectedControlType": "Button",
+          "processors": "",
+          "interactions": "",
+          "initialStateCheck": false
+        },
+        {
+          "name": "Assist",
+          "type": "Button",
+          "id": "b09dff78a9664b929a016230da0f6173",
+          "expectedControlType": "Button",
+          "processors": "",
+          "interactions": "",
+          "initialStateCheck": false
+        },
+        {
+          "name": "Debug",
+          "type": "Button",
+          "id": "2e219bfc21574de1a31b874161bd937d",
+          "expectedControlType": "Button",
+          "processors": "",
+          "interactions": "",
+          "initialStateCheck": false
+        }
+      ],
+      "bindings": [
+        {
+          "name": "",
+          "id": "5c657ef91bc545e4a6e7bbdaec5009c5",
+          "path": "<Keyboard>/space",
+          "interactions": "",
+          "processors": "",
+          "groups": "Desktop",
+          "action": "Swing",
+          "isComposite": false,
+          "isPartOfComposite": false
+        },
+        {
+          "name": "",
+          "id": "fcc537db8cf24f3f918a3b192b726bc2",
+          "path": "<Mouse>/leftButton",
+          "interactions": "",
+          "processors": "",
+          "groups": "Desktop",
+          "action": "PointerSwing",
+          "isComposite": false,
+          "isPartOfComposite": false
+        },
+        {
+          "name": "",
+          "id": "99e90da0dad54211ba05eeae99e1568b",
+          "path": "<Keyboard>/enter",
+          "interactions": "",
+          "processors": "",
+          "groups": "Desktop",
+          "action": "Continue",
+          "isComposite": false,
+          "isPartOfComposite": false
+        },
+        {
+          "name": "",
+          "id": "f635daa8186b4a4791153349f67d9dec",
+          "path": "<Keyboard>/r",
+          "interactions": "",
+          "processors": "",
+          "groups": "Desktop",
+          "action": "Restart",
+          "isComposite": false,
+          "isPartOfComposite": false
+        },
+        {
+          "name": "",
+          "id": "1efdbba101a74ca598db9fe4269743ba",
+          "path": "<Keyboard>/escape",
+          "interactions": "",
+          "processors": "",
+          "groups": "Desktop",
+          "action": "Pause",
+          "isComposite": false,
+          "isPartOfComposite": false
+        },
+        {
+          "name": "",
+          "id": "0cde34e15f6f47adb4949da0cb03226d",
+          "path": "<Keyboard>/m",
+          "interactions": "",
+          "processors": "",
+          "groups": "Desktop",
+          "action": "Menu",
+          "isComposite": false,
+          "isPartOfComposite": false
+        },
+        {
+          "name": "",
+          "id": "b38d91f8b266449c90fbafc1e2eb7c07",
+          "path": "<Keyboard>/l",
+          "interactions": "",
+          "processors": "",
+          "groups": "Desktop",
+          "action": "Language",
+          "isComposite": false,
+          "isPartOfComposite": false
+        },
+        {
+          "name": "",
+          "id": "c4dd201ad4074217a6c4851f2eacddb7",
+          "path": "<Keyboard>/a",
+          "interactions": "",
+          "processors": "",
+          "groups": "Desktop",
+          "action": "Assist",
+          "isComposite": false,
+          "isPartOfComposite": false
+        },
+        {
+          "name": "",
+          "id": "0334eb940a4b4d88837d27d6d55af97f",
+          "path": "<Keyboard>/f3",
+          "interactions": "",
+          "processors": "",
+          "groups": "Desktop",
+          "action": "Debug",
+          "isComposite": false,
+          "isPartOfComposite": false
+        }
+      ]
+    }
+  ],
+  "controlSchemes": [
+    {
+      "name": "Desktop",
+      "bindingGroup": "Desktop",
+      "devices": [
+        {
+          "devicePath": "<Keyboard>",
+          "isOptional": true,
+          "isOR": false
+        },
+        {
+          "devicePath": "<Mouse>",
+          "isOptional": true,
+          "isOR": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="24" result="Passed" total="24" passed="24" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-11-09 09:54:14Z" end-time="2026-11-09 09:54:14Z" duration="0.0590502">
+  <test-suite type="TestSuite" id="1000" name="I project" fullname="I project" runstate="Runnable" testcasecount="24" result="Passed" start-time="2026-11-09 09:54:14Z" end-time="2026-11-09 09:54:14Z" duration="0.059050" total="24" passed="24" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="EditMode" />
+    </properties>
+    <test-suite type="Assembly" id="1030" name="SoftballConnect.EditModeTests.dll" fullname="/private/tmp/softball-arcade-check.GChatN/Library/ScriptAssemblies/SoftballConnect.EditModeTests.dll" runstate="Runnable" testcasecount="24" result="Passed" start-time="2026-11-09 09:54:14Z" end-time="2026-11-09 09:54:14Z" duration="0.046805" total="24" passed="24" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="35879" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <test-suite type="TestSuite" id="1031" name="SoftballConnect" fullname="SoftballConnect" runstate="Runnable" testcasecount="24" result="Passed" start-time="2026-11-09 09:54:14Z" end-time="2026-11-09 09:54:14Z" duration="0.046262" total="24" passed="24" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-suite type="TestSuite" id="1032" name="Tests" fullname="SoftballConnect.Tests" runstate="Runnable" testcasecount="24" result="Passed" start-time="2026-11-09 09:54:14Z" end-time="2026-11-09 09:54:14Z" duration="0.045953" total="24" passed="24" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-suite type="TestFixture" id="1001" name="SimulationTests" fullname="SoftballConnect.Tests.SimulationTests" classname="SoftballConnect.Tests.SimulationTests" runstate="Runnable" testcasecount="24" result="Passed" start-time="2026-11-09 09:54:14Z" end-time="2026-11-09 09:54:14Z" duration="0.045228" total="24" passed="24" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1005" name="AssistHasFiniteExplicitRadius" fullname="SoftballConnect.Tests.SimulationTests.AssistHasFiniteExplicitRadius" methodname="AssistHasFiniteExplicitRadius" classname="SoftballConnect.Tests.SimulationTests" runstate="Runnable" seed="1704441556" result="Passed" start-time="2026-11-09 09:54:14Z" end-time="2026-11-09 09:54:14Z" duration="0.007998" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-suite type="ParameterizedMethod" id="1020" name="EarlyOrLateSwingMisses" fullname="SoftballConnect.Tests.SimulationTests.EarlyOrLateSwingMisses" classname="SoftballConnect.Tests.SimulationTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-11-09 09:54:14Z" end-time="2026-11-09 09:54:14Z" duration="0.007201" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1018" name="EarlyOrLateSwingMisses(-0.6f)" fullname="SoftballConnect.Tests.SimulationTests.EarlyOrLateSwingMisses(-0.6f)" methodname="EarlyOrLateSwingMisses" classname="SoftballConnect.Tests.SimulationTests" runstate="Runnable" seed="1406649849" result="Passed" start-time="2026-11-09 09:54:14Z" end-time="2026-11-09 09:54:14Z" duration="0.005573" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1019" name="EarlyOrLateSwingMisses(0.25f)" fullname="SoftballConnect.Tests.SimulationTests.EarlyOrLateSwingMisses(0.25f)" methodname="EarlyOrLateSwingMisses" classname="SoftballConnect.Tests.SimulationTests" runstate="Runnable" seed="2039630188" result="Passed" start-time="2026-11-09 09:54:14Z" end-time="2026-11-09 09:54:14Z" duration="0.000259" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-case id="1014" name="FairBallAboveFenceIsHomeRunWhenItLands" fullname="SoftballConnect.Tests.SimulationTests.FairBallAboveFenceIsHomeRunWhenItLands" methodname="FairBallAboveFenceIsHomeRunWhenItLands" classname="SoftballConnect.Tests.SimulationTests" runstate="Runnable" seed="680208180" result="Passed" start-time="2026-11-09 09:54:14Z" end-time="2026-11-09 09:54:14Z" duration="0.000718" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-suite type="ParameterizedMethod" id="1011" name="FairFoulBoundary" fullname="SoftballConnect.Tests.SimulationTests.FairFoulBoundary" classname="SoftballConnect.Tests.SimulationTests" runstate="Runnable" testcasecount="5" result="Passed" start-time="2026-11-09 09:54:14Z" end-time="2026-11-09 09:54:14Z" duration="0.001291" total="5" passed="5" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1006" name="FairFoulBoundary(0.0f,5.0f,True)" fullname="SoftballConnect.Tests.SimulationTests.FairFoulBoundary(0.0f,5.0f,True)" methodname="FairFoulBoundary" classname="SoftballConnect.Tests.SimulationTests" runstate="Runnable" seed="1536128243" result="Passed" start-time="2026-11-09 09:54:14Z" end-time="2026-11-09 09:54:14Z" duration="0.000535" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1007" name="FairFoulBoundary(5.0f,5.0f,True)" fullname="SoftballConnect.Tests.SimulationTests.FairFoulBoundary(5.0f,5.0f,True)" methodname="FairFoulBoundary" classname="SoftballConnect.Tests.SimulationTests" runstate="Runnable" seed="404290367" result="Passed" start-time="2026-11-09 09:54:14Z" end-time="2026-11-09 09:54:14Z" duration="0.000044" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1008" name="FairFoulBoundary(-5.0f,5.0f,True)" fullname="SoftballConnect.Tests.SimulationTests.FairFoulBoundary(-5.0f,5.0f,True)" methodname="FairFoulBoundary" classname="SoftballConnect.Tests.SimulationTests" runstate="Runnable" seed="160996803" result="Passed" start-time="2026-11-09 09:54:14Z" end-time="2026-11-09 09:54:14Z" duration="0.000036" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1009" name="FairFoulBoundary(5.01f,5.0f,False)" fullname="SoftballConnect.Tests.SimulationTests.FairFoulBoundary(5.01f,5.0f,False)" methodname="FairFoulBoundary" classname="SoftballConnect.Tests.SimulationTests" runstate="Runnable" seed="805206118" result="Passed" start-time="2026-11-09 09:54:14Z" end-time="2026-11-09 09:54:14Z" duration="0.000041" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1010" name="FairFoulBoundary(0.0f,-0.01f,False)" fullname="SoftballConnect.Tests.SimulationTests.FairFoulBoundary(0.0f,-0.01f,False)" methodname="FairFoulBoundary" classname="SoftballConnect.Tests.SimulationTests" runstate="Runnable" seed="948786514" result="Passed" start-time="2026-11-09 09:54:14Z" end-time="2026-11-09 09:54:14Z" duration="0.000036" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-case id="1013" name="FenceStopsBallAtActualCrossingHeight" fullname="SoftballConnect.Tests.SimulationTests.FenceStopsBallAtActualCrossingHeight" methodname="FenceStopsBallAtActualCrossingHeight" classname="SoftballConnect.Tests.SimulationTests" runstate="Runnable" seed="440087830" result="Passed" start-time="2026-11-09 09:54:14Z" end-time="2026-11-09 09:54:14Z" duration="0.000668" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1012" name="FlightStopsAtInterpolatedGroundContact" fullname="SoftballConnect.Tests.SimulationTests.FlightStopsAtInterpolatedGroundContact" methodname="FlightStopsAtInterpolatedGroundContact" classname="SoftballConnect.Tests.SimulationTests" runstate="Runnable" seed="1993011072" result="Passed" start-time="2026-11-09 09:54:14Z" end-time="2026-11-09 09:54:14Z" duration="0.001986" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1029" name="InvalidConfigurationIsRejectedBeforePlay" fullname="SoftballConnect.Tests.SimulationTests.InvalidConfigurationIsRejectedBeforePlay" methodname="InvalidConfigurationIsRejectedBeforePlay" classname="SoftballConnect.Tests.SimulationTests" runstate="Runnable" seed="1341432150" result="Passed" start-time="2026-11-09 09:54:14Z" end-time="2026-11-09 09:54:14Z" duration="0.000876" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-suite type="ParameterizedMethod" id="1027" name="PauseFreezesAndRestartClearsEachActiveState" fullname="SoftballConnect.Tests.SimulationTests.PauseFreezesAndRestartClearsEachActiveState" classname="SoftballConnect.Tests.SimulationTests" runstate="Runnable" testcasecount="5" result="Passed" start-time="2026-11-09 09:54:14Z" end-time="2026-11-09 09:54:14Z" duration="0.001976" total="5" passed="5" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1022" name="PauseFreezesAndRestartClearsEachActiveState(Prepare)" fullname="SoftballConnect.Tests.SimulationTests.PauseFreezesAndRestartClearsEachActiveState(Prepare)" methodname="PauseFreezesAndRestartClearsEachActiveState" classname="SoftballConnect.Tests.SimulationTests" runstate="Runnable" seed="199957758" result="Passed" start-time="2026-11-09 09:54:14Z" end-time="2026-11-09 09:54:14Z" duration="0.000560" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1023" name="PauseFreezesAndRestartClearsEachActiveState(PitchWindup)" fullname="SoftballConnect.Tests.SimulationTests.PauseFreezesAndRestartClearsEachActiveState(PitchWindup)" methodname="PauseFreezesAndRestartClearsEachActiveState" classname="SoftballConnect.Tests.SimulationTests" runstate="Runnable" seed="1214168099" result="Passed" start-time="2026-11-09 09:54:14Z" end-time="2026-11-09 09:54:14Z" duration="0.000069" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1024" name="PauseFreezesAndRestartClearsEachActiveState(BallInFlight)" fullname="SoftballConnect.Tests.SimulationTests.PauseFreezesAndRestartClearsEachActiveState(BallInFlight)" methodname="PauseFreezesAndRestartClearsEachActiveState" classname="SoftballConnect.Tests.SimulationTests" runstate="Runnable" seed="1743250285" result="Passed" start-time="2026-11-09 09:54:14Z" end-time="2026-11-09 09:54:14Z" duration="0.000070" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1025" name="PauseFreezesAndRestartClearsEachActiveState(BallInPlay)" fullname="SoftballConnect.Tests.SimulationTests.PauseFreezesAndRestartClearsEachActiveState(BallInPlay)" methodname="PauseFreezesAndRestartClearsEachActiveState" classname="SoftballConnect.Tests.SimulationTests" runstate="Runnable" seed="1086365367" result="Passed" start-time="2026-11-09 09:54:14Z" end-time="2026-11-09 09:54:14Z" duration="0.000417" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1026" name="PauseFreezesAndRestartClearsEachActiveState(Feedback)" fullname="SoftballConnect.Tests.SimulationTests.PauseFreezesAndRestartClearsEachActiveState(Feedback)" methodname="PauseFreezesAndRestartClearsEachActiveState" classname="SoftballConnect.Tests.SimulationTests" runstate="Runnable" seed="891459424" result="Passed" start-time="2026-11-09 09:54:14Z" end-time="2026-11-09 09:54:14Z" duration="0.000206" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-case id="1002" name="PitchIsReproducibleAndReachesConfiguredTarget" fullname="SoftballConnect.Tests.SimulationTests.PitchIsReproducibleAndReachesConfiguredTarget" methodname="PitchIsReproducibleAndReachesConfiguredTarget" classname="SoftballConnect.Tests.SimulationTests" runstate="Runnable" seed="730646160" result="Passed" start-time="2026-11-09 09:54:14Z" end-time="2026-11-09 09:54:14Z" duration="0.000796" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1028" name="StateMachineRejectsInvalidEdges" fullname="SoftballConnect.Tests.SimulationTests.StateMachineRejectsInvalidEdges" methodname="StateMachineRejectsInvalidEdges" classname="SoftballConnect.Tests.SimulationTests" runstate="Runnable" seed="1137493703" result="Passed" start-time="2026-11-09 09:54:14Z" end-time="2026-11-09 09:54:14Z" duration="0.000100" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1003" name="SweepCatchesFastCrossingThatEndpointTestsMiss" fullname="SoftballConnect.Tests.SimulationTests.SweepCatchesFastCrossingThatEndpointTestsMiss" methodname="SweepCatchesFastCrossingThatEndpointTestsMiss" classname="SoftballConnect.Tests.SimulationTests" runstate="Runnable" seed="760656309" result="Passed" start-time="2026-11-09 09:54:14Z" end-time="2026-11-09 09:54:14Z" duration="0.001263" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1021" name="TakingPitchResolvesOnceAndFeedbackWaitsForExplicitNext" fullname="SoftballConnect.Tests.SimulationTests.TakingPitchResolvesOnceAndFeedbackWaitsForExplicitNext" methodname="TakingPitchResolvesOnceAndFeedbackWaitsForExplicitNext" classname="SoftballConnect.Tests.SimulationTests" runstate="Runnable" seed="1946426693" result="Passed" start-time="2026-11-09 09:54:14Z" end-time="2026-11-09 09:54:14Z" duration="0.000337" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1004" name="TemporalSweepRejectsPathsCrossingAtDifferentTimes" fullname="SoftballConnect.Tests.SimulationTests.TemporalSweepRejectsPathsCrossingAtDifferentTimes" methodname="TemporalSweepRejectsPathsCrossingAtDifferentTimes" classname="SoftballConnect.Tests.SimulationTests" runstate="Runnable" seed="1204659633" result="Passed" start-time="2026-11-09 09:54:14Z" end-time="2026-11-09 09:54:14Z" duration="0.000198" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-suite type="ParameterizedMethod" id="1017" name="TenConsecutiveTimedSwingsAndRetryStayConsistent" fullname="SoftballConnect.Tests.SimulationTests.TenConsecutiveTimedSwingsAndRetryStayConsistent" classname="SoftballConnect.Tests.SimulationTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-11-09 09:54:14Z" end-time="2026-11-09 09:54:14Z" duration="0.008570" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1015" name="TenConsecutiveTimedSwingsAndRetryStayConsistent(False)" fullname="SoftballConnect.Tests.SimulationTests.TenConsecutiveTimedSwingsAndRetryStayConsistent(False)" methodname="TenConsecutiveTimedSwingsAndRetryStayConsistent" classname="SoftballConnect.Tests.SimulationTests" runstate="Runnable" seed="1949628860" result="Passed" start-time="2026-11-09 09:54:14Z" end-time="2026-11-09 09:54:14Z" duration="0.004469" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1016" name="TenConsecutiveTimedSwingsAndRetryStayConsistent(True)" fullname="SoftballConnect.Tests.SimulationTests.TenConsecutiveTimedSwingsAndRetryStayConsistent(True)" methodname="TenConsecutiveTimedSwingsAndRetryStayConsistent" classname="SoftballConnect.Tests.SimulationTests" runstate="Runnable" seed="2036988908" result="Passed" start-time="2026-11-09 09:54:14Z" end-time="2026-11-09 09:54:14Z" duration="0.003758" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <output><![CDATA[Saving results to: /Users/s.takamiya/Library/Application Support/DefaultCompany/I project/TestResults.xml
+]]></output>
+              </test-case>
+            </test-suite>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

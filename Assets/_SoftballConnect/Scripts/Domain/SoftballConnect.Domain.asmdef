@@ -1,0 +1,7 @@
+{
+  "name": "SoftballConnect.Domain",
+  "rootNamespace": "SoftballConnect",
+  "references": [],
+  "includePlatforms": [],
+  "noEngineReferences": true
+}

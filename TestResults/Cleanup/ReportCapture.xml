@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="1" result="Passed" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-11-09 15:01:50Z" end-time="2026-11-09 15:01:52Z" duration="2.2557639">
+  <test-suite type="TestSuite" id="1016" name="I project" fullname="I project" runstate="Runnable" testcasecount="6" result="Passed" start-time="2026-11-09 15:01:50Z" end-time="2026-11-09 15:01:52Z" duration="2.255764" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="PlayMode" />
+    </properties>
+    <test-suite type="Assembly" id="1010" name="SoftballConnect.PlayModeTests.dll" fullname="/private/tmp/SoftballConnectValidation/Library/ScriptAssemblies/SoftballConnect.PlayModeTests.dll" runstate="Runnable" testcasecount="6" result="Passed" start-time="2026-11-09 15:01:50Z" end-time="2026-11-09 15:01:52Z" duration="2.249002" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="92685" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="PlayMode" />
+        <property name="EditorOnly" value="False" />
+      </properties>
+      <test-suite type="TestSuite" id="1011" name="SoftballConnect" fullname="SoftballConnect" runstate="Runnable" testcasecount="6" result="Passed" start-time="2026-11-09 15:01:50Z" end-time="2026-11-09 15:01:52Z" duration="2.241445" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-suite type="TestSuite" id="1012" name="Tests" fullname="SoftballConnect.Tests" runstate="Runnable" testcasecount="6" result="Passed" start-time="2026-11-09 15:01:50Z" end-time="2026-11-09 15:01:52Z" duration="2.240985" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-suite type="TestFixture" id="1008" name="ReportCaptureTests" fullname="SoftballConnect.Tests.ReportCaptureTests" classname="SoftballConnect.Tests.ReportCaptureTests" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-11-09 15:01:50Z" end-time="2026-11-09 15:01:52Z" duration="2.239974" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties>
+              <property name="Category" value="ReportCapture" />
+            </properties>
+            <test-case id="1009" name="ExportStadiumPitchContactAndUi" fullname="SoftballConnect.Tests.ReportCaptureTests.ExportStadiumPitchContactAndUi" methodname="ExportStadiumPitchContactAndUi" classname="SoftballConnect.Tests.ReportCaptureTests" runstate="Runnable" seed="244963122" result="Passed" start-time="2026-11-09 15:01:50Z" end-time="2026-11-09 15:01:52Z" duration="2.229900" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <output><![CDATA[Saving results to: /Users/s.takamiya/Library/Application Support/DefaultCompany/I project/TestResults.xml
+]]></output>
+            </test-case>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>
