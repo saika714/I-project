@@ -1,12 +1,14 @@
 # Softball Connect — PC打撃MVP
 
-開発環境は **Unity 6000.6.8f1** / URP **17.6.0** / Input System **1.20.1** に統一しています。Phase 0〜1を基盤に、PC打撃の打者視点と球場表示を改善しています。守備・走塁・HMD実機対応は後続です。
+開発環境は **Unity 6000.6.8f1** / URP **17.6.0** / Input System **1.20.1** に統一しています。PC打撃に、試合・練習モード、操作する走塁、得点曲、変化球を追加しています。
 
 打者の目線でプレイする、5球の打撃チャレンジです。打球後も視点は打席に留まり、PCでは右ドラッグで見回せます。初期表示は英語、言語ボタンまたはLで日本語へ切り替えられます。芝・土の質感、段床と座席、防球ネット・照明・ダッグアウトを備えた球場を生成します。
 
 ![打者視点の打席](TestResults/FirstPerson/Visuals/Stadium_PC.png)
 
 Unity Hubからこの`I-project`フォルダを開き、`Assets/_SoftballConnect/Scenes/Bootstrap.unity`でPlay。Enterで開始、Spaceまたは左クリックでスイング、結果を見てEnterで次球へ進みます。5球終了後はEnterで再挑戦できます。
+
+メニューの試合モードでは、打球確定後にW／↑を長押しするか「走る」ボタンで走者を進めます。矢印とミニマップで次の塁を案内し、ホーム到達で加点・音楽再生。練習モードではPでストレート／カーブ／スライダーを選べます。得点曲はDefaultGameConfigのScore Musicから差し替えられます。[操作・調整方法](Docs/MATCH_AND_PRACTICE.md)を参照してください。試合モードは既定5球の攻撃チャレンジです。
 
 ```text
 I-project/

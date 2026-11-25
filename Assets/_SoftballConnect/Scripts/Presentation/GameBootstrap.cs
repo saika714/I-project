@@ -23,11 +23,13 @@ namespace SoftballConnect.Presentation
         LocalizationService localization;
         float accumulator;
         bool debug;
+        bool autoRun;
         const float Step = 1f / 120;
         static bool japanese;
+        static GameMode selectedMode = GameMode.Practice;
 
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
-        static void ResetLanguageOnLaunch() { japanese = false; }
+        static void ResetLanguageOnLaunch() { japanese = false; selectedMode = GameMode.Practice; }
 
         void Start()
         {
@@ -39,12 +41,13 @@ namespace SoftballConnect.Presentation
             localization = new LocalizationService(Config.Localization); if (japanese) localization.Toggle();
             if (Role == SceneRole.StadiumPC)
             {
-                Session = new GameSessionController(settings, InputSource);
+                Session = new GameSessionController(settings, InputSource, selectedMode);
             }
             stadium = new GameObject("GamePresentation").AddComponent<StadiumView>(); stadium.transform.SetParent(transform, false);
             stadium.Initialize(Config, Session);
             feedback = new GameObject("PlayerUI").AddComponent<FeedbackPresenter>(); feedback.transform.SetParent(transform, false);
-            feedback.Initialize(localization, Session, Primary, Restart, Menu, TogglePause, ToggleLanguage, ToggleAssist, ToggleDebug);
+            feedback.Initialize(localization, Session, Primary, Restart, Menu, TogglePause, ToggleLanguage, ToggleAssist, ToggleDebug,
+                () => StartMode(GameMode.Match), ToggleRun, CyclePitch);
             if (stadium.ViewRig != null) feedback.SetTrackingCamera(stadium.ViewRig.PlayerCamera);
         }
         void Update()
@@ -57,7 +60,10 @@ namespace SoftballConnect.Presentation
             if (InputSource.Pressed("Pause")) TogglePause();
             if (InputSource.Pressed("Debug")) ToggleDebug();
             if (InputSource.Pressed("Assist")) ToggleAssist();
+            if (InputSource.Pressed("PitchType")) CyclePitch();
             if (InputSource.Pressed("Continue")) Primary();
+            if (Session.State != GameState.BaseRunning) autoRun = false;
+            Session.RunRequested = Session.State == GameState.BaseRunning && (autoRun || InputSource.Held("Run"));
             bool pointerSwing = InputSource.Pressed("PointerSwing") &&
                 (EventSystem.current == null || !EventSystem.current.IsPointerOverGameObject());
             if (Session.CanSwing && (InputSource.Pressed("Swing") || pointerSwing)) InputSource.QueueSwing();
@@ -67,11 +73,14 @@ namespace SoftballConnect.Presentation
         }
         public void Primary()
         {
-            if (Session == null) SceneManager.LoadScene("Stadium_PC");
+            if (Session == null) StartMode(GameMode.Practice);
             else if (Session.State == GameState.RoundResult) Restart();
             else Session.Next();
         }
-        public void Restart() { if (Session == null) return; Session.Restart(); accumulator = 0; feedback.Present(true); }
+        public void StartMode(GameMode mode) { selectedMode = mode; SceneManager.LoadScene("Stadium_PC"); }
+        public void ToggleRun() { if (Session != null && Session.State == GameState.BaseRunning && !Session.Paused) autoRun = !autoRun; }
+        public void CyclePitch() { Session?.CyclePracticePitch(); feedback.Present(true); }
+        public void Restart() { if (Session == null) return; autoRun = false; Session.Restart(); accumulator = 0; feedback.Present(true); }
         public void Menu() { SceneManager.LoadScene("MainMenu"); }
         public void TogglePause() { if (Session != null) { Session.SetPaused(!Session.Paused); feedback.Present(true); } }
         public void ToggleLanguage() { localization.Toggle(); japanese = localization.Japanese; feedback.Present(true); }

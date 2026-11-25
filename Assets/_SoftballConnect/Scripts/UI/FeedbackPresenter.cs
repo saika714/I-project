@@ -23,6 +23,12 @@ namespace SoftballConnect.UI
         Sprite rounded;
         Text title, status, instruction, result, hint, prompt, metric, eyebrow, impact, timingCaption;
         Button primary, restart, menu, pause, language, assist, debug;
+        Button match, pitchType, run;
+        Text modeLabel, pitchLabel, scoreLabel, nextBaseLabel;
+        RectTransform diamond;
+        RectTransform routeArrow;
+        readonly List<Image> baseIcons = new List<Image>();
+        readonly List<RectTransform> runnerIcons = new List<RectTransform>();
         RectTransform card, bar, promptPanel;
         Image progress;
         Camera trackingCamera;
@@ -36,7 +42,8 @@ namespace SoftballConnect.UI
 
         public void Initialize(LocalizationService localization, GameSessionController game,
             Action startOrNext, Action onRestart, Action onMenu, Action onPause, Action onLanguage,
-            Action onAssist, Action onDebug)
+            Action onAssist, Action onDebug, Action onMatch = null,
+            Action onRun = null, Action onPitch = null)
         {
             text = localization; session = game; isMenu = game == null;
             font = Font.CreateDynamicFontFromOSFont(new[] { "Hiragino Sans", "Yu Gothic", "Noto Sans CJK JP", "Arial" }, 32);
@@ -59,16 +66,25 @@ namespace SoftballConnect.UI
             {
                 var board = Panel("Scoreboard", transform, new Vector2(0.035f, 0.80f), new Vector2(0.325f, 0.955f), Ink);
                 title = Label("Title", board, new Vector2(0.08f, 0.67f), new Vector2(0.92f, 0.95f), 17, TextAnchor.MiddleLeft, Gold);
-                status = Label("Status", board, new Vector2(0.08f, 0.30f), new Vector2(0.94f, 0.72f), 25, TextAnchor.MiddleLeft, Cream);
+                bool isMatch = session.Mode == GameMode.Match;
+                status = Label("Status", board, new Vector2(0.08f, isMatch ? 0.40f : 0.30f), new Vector2(0.94f, 0.72f), isMatch ? 21 : 25, TextAnchor.MiddleLeft, Cream);
                 int count = session.BallsPerRound;
                 for (int i = 0; i < count; i++)
                 {
                     float left = 0.08f + i * 0.84f / count;
-                    var pip = Panel("Ball" + (i + 1), board, new Vector2(left, 0.13f), new Vector2(left + 0.70f / count, 0.23f), new Color(0.27f, 0.37f, 0.43f));
+                    var pip = Panel("Ball" + (i + 1), board, new Vector2(left, isMatch ? 0.33f : 0.13f), new Vector2(left + 0.70f / count, isMatch ? 0.39f : 0.23f), new Color(0.27f, 0.37f, 0.43f));
                     ballPips.Add(pip.GetComponent<Image>());
                 }
                 var badge = Panel("ModeBadge", transform, new Vector2(0.77f, 0.91f), new Vector2(0.965f, 0.955f), Cream);
-                Label("Brand", badge, new Vector2(0.04f, 0), new Vector2(0.96f, 1), 16, TextAnchor.MiddleCenter, Ink).text = "SOFTBALL CONNECT";
+                modeLabel = Label("Brand", badge, new Vector2(0.04f, 0), new Vector2(0.96f, 1), 16, TextAnchor.MiddleCenter, Ink);
+                var pitchBadge = Panel("PitchBadge", transform, new Vector2(0.77f, 0.85f), new Vector2(0.965f, 0.90f), Ink);
+                pitchLabel = Label("PitchType", pitchBadge, new Vector2(0.02f, 0), new Vector2(0.98f, 1), 19, TextAnchor.MiddleCenter, Gold);
+                pitchType = MakeButton("SelectPitch", transform, new Vector2(0.77f, 0.79f), new Vector2(0.965f, 0.84f), onPitch, Cream, Ink, 17);
+                if (isMatch)
+                {
+                    scoreLabel = Label("Score", board, new Vector2(0.08f, 0.03f), new Vector2(0.92f, 0.31f), 23, TextAnchor.MiddleLeft, Gold);
+                    CreateDiamond(onRun);
+                }
             }
             var footer = Panel("Footer", transform, new Vector2(0.03f, 0.025f), new Vector2(0.97f, 0.088f), new Color(1, 0.98f, 0.91f, 0.96f));
             restart = MakeButton("Restart", footer, new Vector2(0.005f, 0.06f), new Vector2(0.16f, 0.94f), onRestart, Cream, Ink, 18);
@@ -96,6 +112,14 @@ namespace SoftballConnect.UI
             result = Label("Result", card, isMenu ? new Vector2(0.08f, 0.23f) : new Vector2(0.08f, 0.20f),
                 isMenu ? new Vector2(0.92f, 0.45f) : new Vector2(0.92f, 0.36f), isMenu ? 21 : 18, TextAnchor.MiddleLeft, Ink);
             primary = MakeButton("Primary", card, new Vector2(0.08f, 0.065f), new Vector2(0.92f, isMenu ? 0.195f : 0.18f), startOrNext, Coral, Color.white, isMenu ? 26 : 22);
+            if (isMenu)
+            {
+                // Keep Primary as the original practice entry for keyboard and existing integrations.
+                Place(primary.GetComponent<RectTransform>(), new Vector2(0.08f, 0.05f), new Vector2(0.92f, 0.16f));
+                match = MakeButton("Match", card, new Vector2(0.08f, 0.18f), new Vector2(0.92f, 0.29f), onMatch, Teal, Color.white, 24);
+                Place(result.rectTransform, new Vector2(0.08f, 0.30f), new Vector2(0.92f, 0.45f));
+                result.fontSize = 18;
+            }
             promptPanel = Panel("PitchPromptPanel", transform, new Vector2(0.355f, 0.84f), new Vector2(0.68f, 0.91f), Ink);
             prompt = Label("PitchPrompt", promptPanel, new Vector2(0.03f, 0), new Vector2(0.97f, 1), 24, TextAnchor.MiddleCenter, Cream);
             bar = Panel("PitchTimingBar", transform, new Vector2(0.68f, 0.15f), new Vector2(0.965f, 0.215f), Ink);
@@ -110,6 +134,69 @@ namespace SoftballConnect.UI
             ballTracker.gameObject.SetActive(false);
             if (session != null) { session.PlayResolved += RememberResult; session.BallContacted += Contact; }
             Present(true);
+        }
+
+        static Vector2 DiamondPoint(float progress)
+        {
+            var position = BaseRunningPlay.BasePosition(1, (int)progress);
+            var next = BaseRunningPlay.BasePosition(1, (int)progress + 1);
+            var point = Vec3.Lerp(position, next, progress - (int)progress);
+            return new Vector2(0.5f + point.X * 0.424264f, 0.25f + point.Z * 0.353553f);
+        }
+        void CreateDiamond(Action onRun)
+        {
+            diamond = Panel("BaseDiamond", transform, new Vector2(0.035f, 0.16f), new Vector2(0.245f, 0.47f), Ink);
+            nextBaseLabel = Label("NextBase", diamond, new Vector2(0.04f, 0.84f), new Vector2(0.96f, 0.98f), 18, TextAnchor.MiddleCenter, Gold);
+            for (int i = 0; i < 4; i++)
+            {
+                Vector2 point = DiamondPoint(i);
+                var icon = Panel("Base" + i, diamond, point - new Vector2(0.06f, 0.055f), point + new Vector2(0.06f, 0.055f), Cream);
+                baseIcons.Add(icon.GetComponent<Image>());
+                Label("Number", icon, Vector2.zero, Vector2.one, 15, TextAnchor.MiddleCenter, Ink).text = i == 0 ? "H" : i.ToString();
+            }
+            for (int i = 0; i < 4; i++) runnerIcons.Add(Panel("RunnerDot" + i, diamond, Vector2.zero, Vector2.one * 0.03f, Coral));
+            routeArrow = Label("RouteArrow", diamond, Vector2.zero, Vector2.zero, 32, TextAnchor.MiddleCenter,
+                new Color(0.25f, 1, 0.65f)).rectTransform;
+            routeArrow.GetComponent<Text>().text = "→";
+            run = MakeButton("Run", diamond, new Vector2(0.04f, 0.025f), new Vector2(0.96f, 0.16f), onRun, Teal, Color.white, 17);
+        }
+        void PresentMatch()
+        {
+            if (isMenu) return;
+            modeLabel.text = text.Get(session.Mode == GameMode.Match ? "matchMode" : "practiceMode");
+            pitchLabel.text = text.Get(session.CurrentPitch.ToString());
+            SetLabel(pitchType, string.Format(text.Get("selectPitchValue"), text.Get("pitchName" + session.PracticePitch)));
+            pitchType.gameObject.SetActive(session.Mode == GameMode.Practice);
+            pitchType.interactable = !session.Paused && (session.State == GameState.Prepare || session.State == GameState.Feedback || session.State == GameState.RoundResult);
+            if (diamond == null) return;
+            scoreLabel.text = string.Format(text.Get("scoreValue"), session.Score);
+            bool running = session.State == GameState.BaseRunning;
+            bool guiding = running || session.State == GameState.BallInPlay;
+            int next = running ? session.RunningPlay.NextBase : 1;
+            nextBaseLabel.text = guiding ? string.Format(text.Get("nextBaseValue"), text.Get("base" + next)) : text.Get("baseRunners");
+            routeArrow.gameObject.SetActive(guiding && !session.Paused);
+            if (guiding)
+            {
+                Vector2 from = DiamondPoint(running ? session.RunningPlay.Progress : 0), to = DiamondPoint(next);
+                Vector2 middle = (from + to) * 0.5f;
+                Place(routeArrow, middle, middle); routeArrow.sizeDelta = new Vector2(48, 40);
+                Vector2 direction = to - from;
+                routeArrow.localRotation = Quaternion.Euler(0, 0, Mathf.Atan2(direction.y * diamond.rect.height, direction.x * diamond.rect.width) * Mathf.Rad2Deg);
+            }
+            run.gameObject.SetActive(running); run.interactable = !session.Paused;
+            SetLabel(run, text.Get(session.RunRequested ? "stopRunning" : "startRunning"));
+            for (int i = 0; i < 4; i++)
+            {
+                baseIcons[i].color = running && i == next % 4 ? new Color(0.25f, 1, 0.65f) :
+                    i > 0 && (session.OccupiedBases & (1 << (i - 1))) != 0 ? Gold : Cream;
+                bool show = running && session.RunningPlay.HasRunner(i) && !session.RunningPlay.RunnerScored(i);
+                runnerIcons[i].gameObject.SetActive(show);
+                if (show)
+                {
+                    Vector2 point = DiamondPoint(i + session.RunningPlay.Progress) + new Vector2(0, 0.07f);
+                    Place(runnerIcons[i], point - Vector2.one * 0.02f, point + Vector2.one * 0.02f);
+                }
+            }
         }
 
         public void SetTrackingCamera(Camera camera) { trackingCamera = camera; }
@@ -186,6 +273,7 @@ namespace SoftballConnect.UI
 
         public void Present(bool force = false)
         {
+            PresentMatch();
             PresentBallTracking();
             bool active = !isMenu && !session.Paused;
             bar.gameObject.SetActive(active && session.State == GameState.BallInFlight);
@@ -195,7 +283,7 @@ namespace SoftballConnect.UI
                 if (!session.Paused) impactAge += Time.unscaledDeltaTime;
                 bool sweetWindow = session.PitchProgress >= 0.84f && session.PitchProgress <= 0.95f && !session.HasSwung;
                 string key = session.State == GameState.Prepare ? "prepare" : session.State == GameState.PitchWindup ? "windup" :
-                    session.State == GameState.BallInPlay ? "followBall" : sweetWindow ? "swingNow" : "watchBall";
+                    session.State == GameState.BaseRunning ? "runHint" : session.State == GameState.BallInPlay ? "followBall" : sweetWindow ? "swingNow" : "watchBall";
                 prompt.text = text.Get(key); promptPanel.GetComponent<Image>().color = sweetWindow ? Coral : Ink;
                 float p = Mathf.Clamp01(session.PitchProgress);
                 progress.rectTransform.anchorMin = new Vector2(p * 0.975f, -0.30f);
@@ -224,13 +312,14 @@ namespace SoftballConnect.UI
             if (isMenu)
             {
                 title.text = text.Get("menuTitle"); eyebrow.text = text.Get("clubTag");
+                SetLabel(match, text.Get("playMatch"));
                 instruction.text = text.Get("welcome"); result.text = text.Get("tutorial"); metric.gameObject.SetActive(false);
                 hint.text = text.Get("menuHint"); SetLabel(primary, text.Get("start")); return;
             }
             assist.interactable = session.State == GameState.Prepare || session.State == GameState.Feedback || session.State == GameState.RoundResult;
-            title.text = text.Get("challenge");
+            title.text = text.Get(session.Mode == GameMode.Match ? "matchMode" : "challenge");
             status.text = string.Format(text.Get("status"), Mathf.Max(1, session.BallNumber), session.BallsPerRound, session.Contacts);
-            hint.text = debugEnabled ? session.State + " | " + text.Get("debugHint") : text.Get("controls");
+            hint.text = debugEnabled ? session.State + " | " + text.Get("debugHint") : text.Get(session.State == GameState.BaseRunning ? "runControls" : "controls");
             bool feedback = session.State == GameState.Feedback, round = session.State == GameState.RoundResult;
             card.gameObject.SetActive(feedback || round || session.Paused); primary.gameObject.SetActive(!session.Paused);
             Place(card, round || session.Paused ? new Vector2(0.30f, 0.29f) : new Vector2(0.66f, 0.32f),
@@ -242,7 +331,7 @@ namespace SoftballConnect.UI
             else if (round)
             {
                 instruction.text = text.Get("roundComplete");
-                metric.text = string.Format(text.Get("contactScore"), session.Contacts, session.BallsPerRound);
+                metric.text = session.Mode == GameMode.Match ? string.Format(text.Get("scoreValue"), session.Score) : string.Format(text.Get("contactScore"), session.Contacts, session.BallsPerRound);
                 result.text = text.Get("roundEncouragement"); SetLabel(primary, text.Get("retry"));
             }
             else if (feedback)
@@ -251,7 +340,9 @@ namespace SoftballConnect.UI
                 metric.text = session.LastResult == BallClassification.Miss ? text.Get("nextChance") : string.Format(text.Get("distanceValue"), session.LastDistance);
                 metric.fontSize = session.LastResult == BallClassification.Miss ? 45 : 64;
                 string timing = !session.HasSwung ? "noSwing" : session.LastTimingOffset < -0.07f ? "early" : session.LastTimingOffset > 0.07f ? "late" : "onTime";
-                result.text = text.Get(timing); SetLabel(primary, text.Get(session.BallNumber == session.BallsPerRound ? "showRound" : "next"));
+                result.text = session.Mode == GameMode.Match && session.AwardedBases > 0 ?
+                    string.Format(text.Get("advanceResult"), text.Get("base" + session.AwardedBases), session.LastRuns) : text.Get(timing);
+                SetLabel(primary, text.Get(session.BallNumber == session.BallsPerRound ? "showRound" : "next"));
             }
             if (round) metric.fontSize = 48;
         }

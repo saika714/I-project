@@ -15,6 +15,8 @@ namespace SoftballConnect.Presentation
         ArcadeArt art;
         TrailRenderer trail;
         LineRenderer batDebug, pitchDebug, strikeZone;
+        LineRenderer baseArrow;
+        readonly List<CharacterView> runners = new List<CharacterView>();
         readonly List<LineRenderer> sparks = new List<LineRenderer>();
         readonly Queue<Vector3> history = new Queue<Vector3>();
         SimulationSettings settings;
@@ -50,6 +52,8 @@ namespace SoftballConnect.Presentation
             pitcher = Character("Pitcher", new Vector3(0, 0, settings.PitchDistance + 0.35f), theme.AwayTeam, 180);
             batter = Character("Batter", new Vector3(-1.22f, 0, -0.12f), theme.HomeTeam, 35, true);
             if (session != null) batter.SetFirstPerson(true);
+            if (session != null && session.Mode == GameMode.Match)
+                for (int i = 0; i < 4; i++) runners.Add(Character("Runner" + i, Vector3.zero, theme.HomeTeam, 45, true));
             foreach (var position in new[] { new Vector3(13.4f, 0, 14), new Vector3(-13.4f, 0, 14),
                 new Vector3(7, 0, 24), new Vector3(-7, 0, 24), new Vector3(0, 0, 38),
                 new Vector3(-24, 0, 31), new Vector3(24, 0, 31) })
@@ -68,6 +72,8 @@ namespace SoftballConnect.Presentation
             landingMarker = art.Group("LandingMarker", transform, Vector3.zero);
             art.Arc("LandingRing", landingMarker, 0.64f, 0.73f, 0, 360, 0.025f, new Color(1, 0.81f, 0.22f));
             ConfigureCamera(config);
+            baseArrow = Line("NextBaseArrow", new Color(0.25f, 1, 0.65f), 0.14f);
+            baseArrow.positionCount = 5; baseArrow.enabled = false;
             batDebug = Line("BatSweepDebug", Color.yellow, 0.012f);
             pitchDebug = Line("PitchPathDebug", Color.white, 0.012f);
             var pitch = new PitchService(settings); pitchDebug.positionCount = 65;
@@ -84,7 +90,7 @@ namespace SoftballConnect.Presentation
             if (session != null)
             {
                 session.StateChanged += OnStateChanged; session.BallContacted += OnContact;
-                gameObject.AddComponent<ArcadeSound>().Initialize(session, theme.EffectsVolume);
+                gameObject.AddComponent<ArcadeSound>().Initialize(session, theme.EffectsVolume, config.ScoreMusic, config.ScoreMusicVolume);
             }
             else
             {
@@ -166,10 +172,16 @@ namespace SoftballConnect.Presentation
             batModel.localScale = new Vector3(settings.BatRadius * 2, settings.BatLength * 0.5f, settings.BatRadius * 2);
             pitcher.PresentPitch(session.WindupProgress, session.State == GameState.PitchWindup);
             batter.PresentBat(grip, tip, session.HasSwung);
+            PresentRunning(dt);
             bool result = session.State == GameState.Feedback && session.LastResult != BallClassification.Miss;
             landingMarker.gameObject.SetActive(result); landingMarker.position = new Vector3(ball.position.x, 0.04f, ball.position.z);
             strikeZone.enabled = session.State == GameState.BallInFlight && !session.HasSwung;
             batDebug.enabled = pitchDebug.enabled = debug;
+            if (debug)
+            {
+                var pitch = new PitchService(settings);
+                for (int i = 0; i < 65; i++) pitchDebug.SetPosition(i, ToUnity(pitch.PositionAt(settings.PitchDuration * i / 64, session.CurrentPitch)));
+            }
             if (debug && !session.Paused && session.State == GameState.BallInFlight)
             {
                 history.Enqueue(grip); history.Enqueue(tip);
@@ -179,6 +191,33 @@ namespace SoftballConnect.Presentation
             ViewRig.Present(dt);
             if (!session.Paused) impactAge += dt;
             PresentImpact();
+        }
+        void PresentRunning(float dt)
+        {
+            bool running = session.State == GameState.BaseRunning;
+            batRig.gameObject.SetActive(!running); batter.gameObject.SetActive(!running);
+            for (int start = 0; start < runners.Count; start++)
+            {
+                var view = runners[start];
+                bool visible = running ? session.RunningPlay.HasRunner(start) && !session.RunningPlay.RunnerScored(start) :
+                    start > 0 && (session.OccupiedBases & (1 << (start - 1))) != 0;
+                view.gameObject.SetActive(visible);
+                if (!visible) continue;
+                view.transform.position = ToUnity(running ? session.RunningPlay.Position(start) : BaseRunningPlay.BasePosition(settings.BaseDistance, start));
+                int target = running ? Mathf.Min(4, start + session.RunningPlay.ReachedBase + 1) : start;
+                Vector3 direction = ToUnity(BaseRunningPlay.BasePosition(settings.BaseDistance, target)) - view.transform.position;
+                if (running && direction.sqrMagnitude > 0.001f) view.transform.rotation = Quaternion.LookRotation(direction);
+                view.PresentRun(session.Paused || !session.RunRequested ? 0 : dt, running && session.RunRequested && !session.Paused);
+            }
+            bool preview = session.Mode == GameMode.Match && session.State == GameState.BallInPlay;
+            baseArrow.enabled = !session.Paused && (running || preview);
+            if (!baseArrow.enabled) return;
+            Vector3 from = running ? ToUnity(session.RunningPlay.Position(0)) : Vector3.zero;
+            Vector3 to = ToUnity(BaseRunningPlay.BasePosition(settings.BaseDistance, running ? session.RunningPlay.NextBase : 1));
+            from.y = to.y = 0.16f;
+            Vector3 forward = (to - from).normalized;
+            Vector3 side = Vector3.Cross(Vector3.up, forward) * 0.65f;
+            baseArrow.SetPositions(new[] { from, to, to - forward * 1.4f + side, to, to - forward * 1.4f - side });
         }
         void PresentImpact()
         {

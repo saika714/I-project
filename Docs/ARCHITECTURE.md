@@ -55,6 +55,7 @@ DomainとApplicationにはUnityEngine、MonoBehaviour、Scene、Input Systemへ�
 | SimulationSettings | 寸法・球速相当の時間・バット・アシストの設定と妥当性検査 |
 | DesktopSwingModel | スイング意図を固定平面のGrip/Tip・速度に変換 |
 | PitchService | リリース位置・到達点・時間から投球位置を算出 |
+| BaseRunningPlay | 塁の座標、打球ごとの進塁数、走者の移動とホーム到達の計算 |
 | BatContactSolver | 同一時間区間の球とバット線分の掃引・接触情報・打球初速 |
 | BallFlightSimulator | 重力/抵抗、地面と円形フェンスの交差、飛距離と分類 |
 | GameSessionController | 入力受取、唯一の状態遷移、接触/結果の一度だけの確定 |
@@ -74,6 +75,7 @@ DomainとApplicationにはUnityEngine、MonoBehaviour、Scene、Input Systemへ�
 Prepare → PitchWindup → BallInFlight → BallInPlay → Feedback
                              └──── miss ────────────┘
 Feedback → Prepare（次球） / RoundResult（規定球数後）
+試合モードのフェア打球: BallInPlay → BaseRunning → Feedback
 Restart: どの状態からもPrepareへ明示的に初期化
 ```
 
@@ -95,5 +97,7 @@ Unity Updateが最大0.25秒を1/120秒単位に分割してSession.Tickへ渡�
 - **Content**: DefaultGameConfigがSimulation設定、入力、文字列、DefaultVisualThemeを参照。テーマは色・球場名・描画用マテリアル・効果音量を持つ。実行開始時にSimulation設定を複製し、表示用マテリアルも実行時に生成する。プレイ操作は元アセットを変更しない。
 
 現在の表示と調整箇所は[打者視点・英語表示・スタジアム](FIRST_PERSON_STADIUM.md)を参照。
+
+試合・練習のモード、走塁・得点、球種と得点音楽の現在の仕様は[試合・練習モード](MATCH_AND_PRACTICE.md)を参照。試合ではGameSessionControllerがBaseRunningPlayを所有し、ホーム到達時にRunsScoredを発行する。ScoreMusicはGameConfigのAudioClip参照で差し替える。
 
 最初のスライスではシーンにGameBootstrapと設定参照を保存し、球場・UIはPlay時に生成する。Play終了後のHierarchy編集は保存されない。Inspectorで永続化する調整先はConfig/Prefabsとする。

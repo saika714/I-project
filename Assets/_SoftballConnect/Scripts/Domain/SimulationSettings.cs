@@ -22,19 +22,25 @@ namespace SoftballConnect.Domain
         public float Drag = 0.035f;
         public float MaxFlightDuration = 12;
         public int BallsPerRound = 5;
+        public float RunSpeed = 7;
+        public float DoubleDistance = 25;
+        public float TripleDistance = 40;
+        public float CurveBreak = 0.9f;
+        public float SliderBreak = 0.55f;
 
         public void Validate()
         {
             foreach (float v in new[] { PitchDistance, BaseDistance, FenceDistance, FenceHeight,
                 PitchDuration, WindupDuration, BallRadius, BatLength, BatRadius, SwingDuration,
-                Gravity, MaxFlightDuration })
+                Gravity, MaxFlightDuration, RunSpeed, DoubleDistance, TripleDistance })
                 if (float.IsNaN(v) || float.IsInfinity(v) || v <= 0)
                     throw new ArgumentException("Lengths, times and gravity must be finite and positive.");
-            foreach (float v in new[] { AssistRadius, Drag, PitchGravity })
+            foreach (float v in new[] { AssistRadius, Drag, PitchGravity, CurveBreak, SliderBreak })
                 if (float.IsNaN(v) || float.IsInfinity(v) || v < 0)
                     throw new ArgumentException("Assist, drag and pitch gravity must be finite and nonnegative.");
             if (float.IsNaN(SweetSpot) || SweetSpot < 0 || SweetSpot > 1 || BallsPerRound < 1)
                 throw new ArgumentException("Invalid sweet spot or ball count.");
+            if (TripleDistance <= DoubleDistance) throw new ArgumentException("Triple distance must exceed double distance.");
         }
     }
 }

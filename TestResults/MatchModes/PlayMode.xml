@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="8" result="Passed" total="8" passed="8" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-11-25 15:08:32Z" end-time="2026-11-25 15:08:39Z" duration="7.145402">
+  <test-suite type="TestSuite" id="1020" name="I project" fullname="I project" runstate="Runnable" testcasecount="9" result="Passed" start-time="2026-11-25 15:08:32Z" end-time="2026-11-25 15:08:39Z" duration="7.145402" total="8" passed="8" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="PlayMode" />
+    </properties>
+    <test-suite type="Assembly" id="1014" name="SoftballConnect.PlayModeTests.dll" fullname="/private/tmp/SoftballMatchValidation/Library/ScriptAssemblies/SoftballConnect.PlayModeTests.dll" runstate="Runnable" testcasecount="9" result="Passed" start-time="2026-11-25 15:08:32Z" end-time="2026-11-25 15:08:39Z" duration="7.134549" total="8" passed="8" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="23893" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="PlayMode" />
+        <property name="EditorOnly" value="False" />
+      </properties>
+      <test-suite type="TestSuite" id="1015" name="SoftballConnect" fullname="SoftballConnect" runstate="Runnable" testcasecount="9" result="Passed" start-time="2026-11-25 15:08:32Z" end-time="2026-11-25 15:08:39Z" duration="7.133856" total="8" passed="8" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-suite type="TestSuite" id="1016" name="Tests" fullname="SoftballConnect.Tests" runstate="Runnable" testcasecount="9" result="Passed" start-time="2026-11-25 15:08:32Z" end-time="2026-11-25 15:08:39Z" duration="7.133434" total="8" passed="8" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-suite type="TestFixture" id="1001" name="FirstPersonViewTests" fullname="SoftballConnect.Tests.FirstPersonViewTests" classname="SoftballConnect.Tests.FirstPersonViewTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-11-25 15:08:32Z" end-time="2026-11-25 15:08:33Z" duration="1.480914" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1002" name="BootUsesEnglishAndJapaneseChoiceSurvivesMenuAndGame" fullname="SoftballConnect.Tests.FirstPersonViewTests.BootUsesEnglishAndJapaneseChoiceSurvivesMenuAndGame" methodname="BootUsesEnglishAndJapaneseChoiceSurvivesMenuAndGame" classname="SoftballConnect.Tests.FirstPersonViewTests" runstate="Runnable" seed="1344819125" result="Passed" start-time="2026-11-25 15:08:32Z" end-time="2026-11-25 15:08:33Z" duration="0.992299" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1003" name="CameraRemainsAtBatterThroughContactResultAndRetry" fullname="SoftballConnect.Tests.FirstPersonViewTests.CameraRemainsAtBatterThroughContactResultAndRetry" methodname="CameraRemainsAtBatterThroughContactResultAndRetry" classname="SoftballConnect.Tests.FirstPersonViewTests" runstate="Runnable" seed="32731408" result="Passed" start-time="2026-11-25 15:08:33Z" end-time="2026-11-25 15:08:33Z" duration="0.241718" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1004" name="ExternalHeadPoseContinuesUpdatingWhilePausedAndInFeedback" fullname="SoftballConnect.Tests.FirstPersonViewTests.ExternalHeadPoseContinuesUpdatingWhilePausedAndInFeedback" methodname="ExternalHeadPoseContinuesUpdatingWhilePausedAndInFeedback" classname="SoftballConnect.Tests.FirstPersonViewTests" runstate="Runnable" seed="272281600" result="Passed" start-time="2026-11-25 15:08:33Z" end-time="2026-11-25 15:08:33Z" duration="0.235839" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+          </test-suite>
+          <test-suite type="TestFixture" id="1005" name="MatchModeFlowTests" fullname="SoftballConnect.Tests.MatchModeFlowTests" classname="SoftballConnect.Tests.MatchModeFlowTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-11-25 15:08:33Z" end-time="2026-11-25 15:08:36Z" duration="2.476012" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1008" name="ConfiguredScoreClipIsUsedAndRemainsOwnedByContent" fullname="SoftballConnect.Tests.MatchModeFlowTests.ConfiguredScoreClipIsUsedAndRemainsOwnedByContent" methodname="ConfiguredScoreClipIsUsedAndRemainsOwnedByContent" classname="SoftballConnect.Tests.MatchModeFlowTests" runstate="Runnable" seed="76177829" result="Passed" start-time="2026-11-25 15:08:33Z" end-time="2026-11-25 15:08:33Z" duration="0.017063" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1006" name="MatchMenuRunningInputArrowsScoringAndRestartAreConnected" fullname="SoftballConnect.Tests.MatchModeFlowTests.MatchMenuRunningInputArrowsScoringAndRestartAreConnected" methodname="MatchMenuRunningInputArrowsScoringAndRestartAreConnected" classname="SoftballConnect.Tests.MatchModeFlowTests" runstate="Runnable" seed="1056996243" result="Passed" start-time="2026-11-25 15:08:33Z" end-time="2026-11-25 15:08:35Z" duration="1.790035" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1007" name="PracticePitchButtonChangesVisiblePitchWithoutStartingRunning" fullname="SoftballConnect.Tests.MatchModeFlowTests.PracticePitchButtonChangesVisiblePitchWithoutStartingRunning" methodname="PracticePitchButtonChangesVisiblePitchWithoutStartingRunning" classname="SoftballConnect.Tests.MatchModeFlowTests" runstate="Runnable" seed="1660309908" result="Passed" start-time="2026-11-25 15:08:35Z" end-time="2026-11-25 15:08:36Z" duration="0.665942" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+          </test-suite>
+          <test-suite type="TestFixture" id="1009" name="MvpFlowTests" fullname="SoftballConnect.Tests.MvpFlowTests" classname="SoftballConnect.Tests.MvpFlowTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-11-25 15:08:36Z" end-time="2026-11-25 15:08:39Z" duration="3.175107" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1011" name="MenuFiveBallsResultRetryAndMenu" fullname="SoftballConnect.Tests.MvpFlowTests.MenuFiveBallsResultRetryAndMenu" methodname="MenuFiveBallsResultRetryAndMenu" classname="SoftballConnect.Tests.MvpFlowTests" runstate="Runnable" seed="638783983" result="Passed" start-time="2026-11-25 15:08:36Z" end-time="2026-11-25 15:08:38Z" duration="2.831891" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1010" name="SpaceInputReachesSimulationAndPauseFreezesDriver" fullname="SoftballConnect.Tests.MvpFlowTests.SpaceInputReachesSimulationAndPauseFreezesDriver" methodname="SpaceInputReachesSimulationAndPauseFreezesDriver" classname="SoftballConnect.Tests.MvpFlowTests" runstate="Runnable" seed="1231991794" result="Passed" start-time="2026-11-25 15:08:38Z" end-time="2026-11-25 15:08:39Z" duration="0.337718" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <output><![CDATA[Saving results to: /Users/s.takamiya/Library/Application Support/DefaultCompany/I project/TestResults.xml
+]]></output>
+            </test-case>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

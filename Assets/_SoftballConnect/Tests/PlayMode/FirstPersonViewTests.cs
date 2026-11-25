@@ -30,7 +30,7 @@ namespace SoftballConnect.Tests
             yield return null;
             var root = Object.FindAnyObjectByType<GameBootstrap>();
             Assert.That(root.Japanese, Is.False);
-            Assert.That(GameObject.Find("PlayerUI/FeedbackCard/Primary").GetComponentInChildren<Text>().text, Does.Contain("PLAY BALL"));
+            Assert.That(GameObject.Find("PlayerUI/FeedbackCard/Primary").GetComponentInChildren<Text>().text, Does.Contain("PRACTICE"));
             root.ToggleLanguage(); Assert.That(root.Japanese, Is.True);
             root.Primary(); yield return null; yield return null;
             root = Object.FindAnyObjectByType<GameBootstrap>();

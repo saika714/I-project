@@ -85,6 +85,24 @@
           "processors": "",
           "interactions": "",
           "initialStateCheck": false
+        },
+        {
+          "name": "Run",
+          "type": "Button",
+          "id": "fbfdc9315c684107a1ce5c05646a89e2",
+          "expectedControlType": "Button",
+          "processors": "",
+          "interactions": "",
+          "initialStateCheck": false
+        },
+        {
+          "name": "PitchType",
+          "type": "Button",
+          "id": "66dd101b5b284d5e8728263219f6aba3",
+          "expectedControlType": "Button",
+          "processors": "",
+          "interactions": "",
+          "initialStateCheck": false
         }
       ],
       "bindings": [
@@ -184,6 +202,39 @@
           "processors": "",
           "groups": "Desktop",
           "action": "Debug",
+          "isComposite": false,
+          "isPartOfComposite": false
+        },
+        {
+          "name": "",
+          "id": "e9caa46e6dc14c1994d28c2b70f578c2",
+          "path": "<Keyboard>/w",
+          "interactions": "",
+          "processors": "",
+          "groups": "Desktop",
+          "action": "Run",
+          "isComposite": false,
+          "isPartOfComposite": false
+        },
+        {
+          "name": "",
+          "id": "c996d029728148bdaf104e87a0b367a9",
+          "path": "<Keyboard>/upArrow",
+          "interactions": "",
+          "processors": "",
+          "groups": "Desktop",
+          "action": "Run",
+          "isComposite": false,
+          "isPartOfComposite": false
+        },
+        {
+          "name": "",
+          "id": "25253e32a99943bea855453b3165bcd4",
+          "path": "<Keyboard>/p",
+          "interactions": "",
+          "processors": "",
+          "groups": "Desktop",
+          "action": "PitchType",
           "isComposite": false,
           "isPartOfComposite": false
         }

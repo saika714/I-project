@@ -67,6 +67,17 @@ namespace SoftballConnect.Presentation
             modelRoot.localRotation = Quaternion.Euler(0, Mathf.Sin(idleTime * 0.8f) * 3, 0);
         }
 
+        public void PresentRun(float dt, bool running)
+        {
+            idleTime += dt * 11;
+            float stride = running ? Mathf.Sin(idleTime) : 0;
+            modelRoot.localPosition = Vector3.up * (running ? Mathf.Abs(stride) * 0.055f : 0);
+            modelRoot.localRotation = Quaternion.Euler(running ? 7 : 0, 0, 0);
+            leftShoe.localPosition = leftRest + new Vector3(0, Mathf.Max(0, stride) * 0.16f, stride * 0.22f);
+            rightShoe.localPosition = rightRest + new Vector3(0, Mathf.Max(0, -stride) * 0.16f, -stride * 0.22f);
+            arm.localRotation = Quaternion.Euler(stride * 28, 0, 0);
+        }
+
         public void PresentBat(Vector3 grip, Vector3 tip, bool hasSwung)
         {
             float angle = Mathf.Atan2(tip.z - grip.z, tip.x - grip.x) * Mathf.Rad2Deg;

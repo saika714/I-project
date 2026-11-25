@@ -17,6 +17,7 @@ namespace SoftballConnect.Input
             map.Enable();
         }
         public bool Pressed(string name) => map != null && map.FindAction(name, true).WasPressedThisFrame();
+        public bool Held(string name) => map != null && map.FindAction(name, true).IsPressed();
         public void QueueSwing() => motion.QueueSwing();
         public BatInputFrame Sample(float dt) => motion.Sample(dt);
         public void Reset() => motion.Reset();

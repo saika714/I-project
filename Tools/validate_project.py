@@ -36,7 +36,7 @@ for layer in ["Domain", "Application"]:
 
 actions = json.loads((MVP / "Input/SoftballDesktop.inputactions").read_text())
 names = {a["name"] for a in actions["maps"][0]["actions"]}
-require(names == {"Swing", "PointerSwing", "Continue", "Restart", "Pause", "Menu", "Language", "Assist", "Debug"}, "Unexpected action names")
+require(names == {"Swing", "PointerSwing", "Continue", "Restart", "Pause", "Menu", "Language", "Assist", "Debug", "Run", "PitchType"}, "Unexpected action names")
 catalog = json.loads((MVP / "Localization/ui.json").read_text())["entries"]
 keys = {e["key"] for e in catalog}
 require(len(keys) == len(catalog), "Duplicate localization keys")

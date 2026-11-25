@@ -22,18 +22,18 @@
     },
     {
       "key": "tutorial",
-      "en": "01  Watch the underhand pitch\n02  Swing with Space or click\n03  Right-drag to look. Enter for the next pitch.",
-      "ja": "01  下手投げの球を見よう\n02  Space かクリックでスイング\n03  右ドラッグで見回す。Enterで次の球へ。"
+      "en": "Space / click: swing · Right-drag: look\nMatch: hold W / ↑ or use RUN to advance.",
+      "ja": "Space / クリックでスイング。右ドラッグで見回す。\n試合では W / ↑ 長押しか走るボタンで進塁。"
     },
     {
       "key": "menuHint",
-      "en": "One swing at a time. Press Enter to play.",
-      "ja": "自分のタイミングで。Enter でプレイボール！"
+      "en": "Choose Match or Practice. Enter starts Practice.",
+      "ja": "試合か練習を選ぼう。Enter は練習モード。"
     },
     {
       "key": "start",
-      "en": "PLAY BALL!   Enter",
-      "ja": "プレイボール！  Enter"
+      "en": "PRACTICE   Enter",
+      "ja": "練習モード  Enter"
     },
     {
       "key": "restart",
@@ -279,6 +279,116 @@
       "key": "ballBelow",
       "en": "LOOK DOWN ↓ {0:0} m",
       "ja": "下を見る ↓ {0:0} m"
+    },
+    {
+      "key": "matchMode",
+      "en": "MATCH CHALLENGE",
+      "ja": "試合モード"
+    },
+    {
+      "key": "practiceMode",
+      "en": "BATTING PRACTICE",
+      "ja": "練習モード"
+    },
+    {
+      "key": "playMatch",
+      "en": "MATCH · RUN & SCORE",
+      "ja": "試合モード · 走って得点！"
+    },
+    {
+      "key": "Straight",
+      "en": "PITCH · STRAIGHT",
+      "ja": "球種 · ストレート"
+    },
+    {
+      "key": "Curve",
+      "en": "PITCH · CURVE",
+      "ja": "球種 · カーブ"
+    },
+    {
+      "key": "Slider",
+      "en": "PITCH · SLIDER",
+      "ja": "球種 · スライダー"
+    },
+    {
+      "key": "scoreValue",
+      "en": "SCORE  {0}",
+      "ja": "得点  {0} 点"
+    },
+    {
+      "key": "base1",
+      "en": "1ST BASE",
+      "ja": "1塁"
+    },
+    {
+      "key": "base2",
+      "en": "2ND BASE",
+      "ja": "2塁"
+    },
+    {
+      "key": "base3",
+      "en": "3RD BASE",
+      "ja": "3塁"
+    },
+    {
+      "key": "base4",
+      "en": "HOME",
+      "ja": "本塁"
+    },
+    {
+      "key": "baseRunners",
+      "en": "BASE RUNNERS",
+      "ja": "塁と走者"
+    },
+    {
+      "key": "startRunning",
+      "en": "RUN  ▶",
+      "ja": "走る  ▶"
+    },
+    {
+      "key": "stopRunning",
+      "en": "STOP  ■",
+      "ja": "止まる  ■"
+    },
+    {
+      "key": "runHint",
+      "en": "RUN!   Hold W / ↑",
+      "ja": "走ろう！  W / ↑ 長押し"
+    },
+    {
+      "key": "runControls",
+      "en": "Hold W / ↑: RUN · Release: STOP · RUN button: auto-run",
+      "ja": "W / ↑ 長押し: 走る · 離す: 止まる · 走るボタン: 自動走塁"
+    },
+    {
+      "key": "advanceResult",
+      "en": "Reached {0} · +{1} RUNS",
+      "ja": "{0} に到着 · この打席で {1} 点"
+    },
+    {
+      "key": "selectPitchValue",
+      "en": "NEXT: {0}   P",
+      "ja": "次: {0}  P"
+    },
+    {
+      "key": "pitchNameStraight",
+      "en": "STRAIGHT",
+      "ja": "ストレート"
+    },
+    {
+      "key": "pitchNameCurve",
+      "en": "CURVE",
+      "ja": "カーブ"
+    },
+    {
+      "key": "pitchNameSlider",
+      "en": "SLIDER",
+      "ja": "スライダー"
+    },
+    {
+      "key": "nextBaseValue",
+      "en": "NEXT · {0}",
+      "ja": "次の塁 · {0}"
     }
   ]
 }
